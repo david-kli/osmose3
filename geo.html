@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GeoLocation Example</title>
+    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+  
+    var watchId = null;
+  
+    // device APIs are available
+    //
+    function onDeviceReady() {
+      var options = { timeout: 30000 };
+      watchId = navigator.geolocation.watchPosition(onSuccess, onError, options);
+    }
+
+    // onSuccess Geolocation
+    //
+    function onSuccess(postion) {
+      var element = document.getElementById('geolocation');
+      element.innerHTML = ''+
+        'Latitude: '          + position.coords.latitude         + '<br />' +
+        'Longitude: '         + position.coords.longitude        + '<br />' +
+        'Altitude: '          + position.coords.altitube         + '<br />' +
+        'Accuracy: '          + position.coords.accuracy         + '<br />' +
+        'Altitude Accuracy: ' + position.coords.altitudeAccuracy + '<br />' +
+        'Heading: '           + position.coords.heading          + '<br />' +
+        'Speed: '             + position.coords.speed            + '<br />' +
+        'Timestamp: '         + position.timestamp               + '<br />' +
+        '<hr />' + element.innerHTML;
+    }
+
+
+    function onError(error) {
+      alert('code: ' + error.code + '\n' + 'message: '+ error.message +'\n');
+    }
+
+    </script>
+  </head>
+  <body>
+    <p id="geolocation">Watching geolocation...</p>
+  </body>
+</html>
