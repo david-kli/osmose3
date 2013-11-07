@@ -15,7 +15,7 @@
     // device APIs are available
     //
     function onDeviceReady() {
-      console.log('Device ready, starting the watcher');
+      console.log('***** Device ready, starting the watcher');
       watchId = navigator.geolocation.watchPosition(onSuccess, onError, options);
     }
 
@@ -42,6 +42,7 @@
       } else {
         navigator.geolocation.clearWatch(watchId);
         watchId = navigator.geolocation.watchPosition(onSuccess, onError, options);
+        console.log('***** Resetting GPS watcher.');
       }
     }
 
