@@ -10,12 +10,12 @@
     document.addEventListener("deviceready", onDeviceReady, false);
   
     var watchId = null;
+    var options = { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true };
   
     // device APIs are available
     //
     function onDeviceReady() {
       console.log('Device ready, starting the watcher');
-      var options = { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true };
       watchId = navigator.geolocation.watchPosition(onSuccess, onError, options);
     }
 
