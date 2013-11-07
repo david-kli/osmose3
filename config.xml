@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.kenzielane.osmose3"
-        version="1.0.8"
+        version="1.0.9"
         xmlns="http://www.w3.org/ns/widgets"
         xmlns:gap="http://phonegap.com/ns/1.0">
 
@@ -17,7 +17,7 @@
     <feature name="http://api.phonegap.com/1.0/device" />
     <feature name="http://api.phonegap.com/1.0/geolocation" />
 
-    <gap:plugin name="com.phonegap.plugin.geolocation" />
+    <gap:plugin name="com.phonegap.plugins.geolocation" />
 
     <gap:platform name="android" />
 
