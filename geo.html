@@ -14,6 +14,7 @@
     // device APIs are available
     //
     function onDeviceReady() {
+      console.log('Device ready, starting the watcher');
       var options = { timeout: 30000 };
       watchId = navigator.geolocation.watchPosition(onSuccess, onError, options);
     }
