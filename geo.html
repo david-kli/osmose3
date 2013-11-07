@@ -15,7 +15,7 @@
     //
     function onDeviceReady() {
       console.log('Device ready, starting the watcher');
-      var options = { timeout: 30000 };
+      var options = { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true };
       watchId = navigator.geolocation.watchPosition(onSuccess, onError, options);
     }
 
@@ -37,7 +37,9 @@
 
 
     function onError(error) {
-      alert('code: ' + error.code + '\n' + 'message: '+ error.message +'\n');
+      if (error.code != 3) {
+        alert('code: ' + error.code + '\n' + 'message: '+ error.message +'\n');
+      }
     }
 
     </script>
