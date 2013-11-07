@@ -39,6 +39,9 @@
     function onError(error) {
       if (error.code != 3) {
         alert('code: ' + error.code + '\n' + 'message: '+ error.message +'\n');
+      } else {
+        navigator.geolocation.clearWatch(watchId);
+        watchId = navigator.geolocation.watchPosition(onSuccess, onError, options);
       }
     }
 
